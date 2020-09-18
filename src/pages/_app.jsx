@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <div
         sx={{
-          fontFamily: "body",
           marginLeft: "auto",
           marginRight: "auto",
           maxWidth: "42rem",

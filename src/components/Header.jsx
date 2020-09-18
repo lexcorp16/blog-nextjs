@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useColorMode } from "theme-ui";
+import Link from "next/link";
 
 import styles from "../styles/Header.module.css";
 
@@ -11,14 +12,22 @@ const Header = () => {
     <div className={styles.container}>
       <h1
         sx={{
-          color: "primary",
           margin: "0",
           fontWeight: "900",
-          fontSize: 48,
-          fontFamily: "monospace",
+          fontSize: [5, 6],
         }}
       >
-        Fasoro's Blog
+        <Link href="/">
+          <a
+            sx={{
+              color: "primary",
+              textDecoration: "none",
+              cursor: 'pointer'
+            }}
+          >
+            Fasoro's Blog
+          </a>
+        </Link>
       </h1>
       {colorMode === "dark" ? (
         <svg
@@ -28,15 +37,17 @@ const Header = () => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-sun"
-          css={{
-            cursor: "pointer",
-            marginTop: "9px",
-          }}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`feather feather-sun ${styles.icon}`}
           onClick={() => setColorMode("default")}
+          sx={{
+            marginTop: "3px",
+            "@media screen and (min-width: 40em)": {
+              marginTop: "12px",
+            },
+          }}
         >
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -56,15 +67,17 @@ const Header = () => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-moon"
-          css={{
-            cursor: "pointer",
-            marginTop: "9px",
-          }}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`feather feather-sun ${styles.icon}`}
           onClick={() => setColorMode("dark")}
+          sx={{
+            marginTop: "0px",
+            "@media screen and (min-width: 40em)": {
+              marginTop: "12px",
+            },
+          }}
         >
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>

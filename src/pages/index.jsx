@@ -10,24 +10,33 @@ export default function Home() {
       <Head>
         <title>Blog</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
-      <Bio />
       <main>
         <div>
           <h2
             sx={{
               color: "primary",
               margin: "0",
-              cursor: "pointer",
               fontWeight: "800",
-              fontSize: 32,
+              fontSize: [4, 5],
             }}
           >
-            <a>State Management in React</a>
+            <a
+              sx={{
+                cursor: "pointer",
+              }}
+            >
+              State Management in React
+            </a>
           </h2>
           <p
             sx={{
               margin: "0",
+              fontSize: 0,
             }}
           >
             September 28th, 2020 • 5 mins read
@@ -41,6 +50,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Bio />
       <footer>
         <a
           href="https://twitter.com/fasoroalexander"
